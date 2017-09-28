@@ -1,0 +1,8 @@
+mapreduce-pig
+path writeen in grunt
+or 
+hadoop mdhe type krych load,dumpp vaigre and save .pig ni krych 
+n hadoop mdhe run krych terminal vrti pig -x local filename
+or
+local in
+pig -x local 

@@ -1,0 +1,19 @@
+movie = load '/arti/movies.csv' using PigStorage(',') as (id:int,name:chararray,year:chararray,rating:double,duration:int);
+dump movie;
+1.m = FILTER movie by year >='1945' AND year <='1959';
+y=foreach m generate year,'1';
+a = group y all;
+t=foreach a generate group,COUNT(y)as headcount;
+dump t;
+2.r = FILTER movie by rating>3.9;
+y=foreach r generate rating,'1';
+a= group y all;
+t= foreach a generate group,COUNT(y) as headcount;
+dump t;
+3.duration
+4.u=group movie by year;
+l=foreach u generate as group year,COUNT(movie) as headcount;
+dump l;
+5.a= group movie all;
+l=foreach a generate COUNT(movie) as headcount;
+dump l;
